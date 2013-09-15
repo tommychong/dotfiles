@@ -81,6 +81,14 @@ alias ga='git add'
 alias gap='git add -p'
 alias gd='git diff'
 alias gfind='git ls-files'
+alias gsu='git submodule update'
+alias gdh='git diff HEAD^'
+
+alias cls='clear && ls'
+
+alias ez='vim ~/.zshrc'
+alias sz='source ~/.zshrc'
+
 
 #Use badass 256 color xterm
 export TERM=xterm-256color

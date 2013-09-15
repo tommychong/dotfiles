@@ -9,6 +9,7 @@ Bundle 'gmarik/vundle'
 " Github Bundles
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails.git'
+Bundle 'tpope/vim-abolish'
 Bundle 'kien/ctrlp.vim'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
@@ -104,3 +105,17 @@ autocmd FileType python nnoremap <silent> <c-y> :call Flake8()<CR>
 
 "Nerd Tree
 map <C-n> :NERDTreeToggle<CR>
+
+"so jumping around in snake-case-land isn't so annoying
+"set iskeyword-=_
+
+" Prevent Vim from clobbering the scrollback buffer.
+set t_ti= t_te=
+
+set title
+
+let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmd = 'CtrlPLastMode'
+let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
+
+map <C-l> :CtrlPLine<CR>
