@@ -97,6 +97,10 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'powerlineish'
 
+"Having the full branchname here all the time was annoying me
+"Have something else useful here?
+let g:airline_section_b = ''
+
 "highlight lines past 80 columns in length
 match ErrorMsg /\%>80v.\+/
 
@@ -110,7 +114,7 @@ map <C-n> :NERDTreeToggle<CR>
 "set iskeyword-=_
 
 " Prevent Vim from clobbering the scrollback buffer.
-set t_ti= t_te=
+"set t_ti= t_te=
 
 set title
 
