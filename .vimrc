@@ -20,6 +20,9 @@ Bundle 'myusuf3/numbers.vim'
 Bundle 'sontek/rope-vim'
 Bundle 'nvie/vim-flake8'
 Bundle 'mileszs/ack.vim'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'guns/vim-clojure-static'
+Bundle 'tpope/vim-fireplace'
 
 set t_Co=256 "need more colourz
 set number
@@ -29,7 +32,12 @@ filetype off
 
 syntax enable
 
+let g:solarized_termcolors = 256
+"let g:solarized_visibility = "high"
+"let g:solarized_contrast = "high"
+let g:solarized_termtrans = 1
 set background=dark
+colorscheme solarized
 
 set expandtab
 set tabstop=4
@@ -75,7 +83,8 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 
 "Highlight the current line with slighly grey bg
-hi CursorLine cterm=NONE ctermbg=233 guibg=gray guifg=white
+"hi CursorLine cterm=NONE ctermbg=233 guibg=gray guifg=white
+hi CursorLine cterm=NONE ctermbg=016 guibg=gray guifg=white
 set cursorline
 
 "ctrl-p stuff
@@ -98,7 +107,9 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'powerlineish'
 
 "highlight lines past 80 columns in length
-match ErrorMsg /\%>80v.\+/
+"
+hi OverLength ctermfg=096
+match OverLength /\%>79v.\+/
 
 "Ctrl-Y: Lint test for python
 autocmd FileType python nnoremap <silent> <c-y> :call Flake8()<CR>
@@ -110,12 +121,14 @@ map <C-n> :NERDTreeToggle<CR>
 "set iskeyword-=_
 
 " Prevent Vim from clobbering the scrollback buffer.
-set t_ti= t_te=
+" set t_ti= t_te=
+" NOTE: looks too weird when I close/background
 
 set title
 
+"Ctrl-P
 let g:ctrlp_map = '<c-p>'
-"let g:ctrlp_cmd = 'CtrlPLastMode'
 let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 
+"Line search in Ctrl-P
 map <C-l> :CtrlPLine<CR>
