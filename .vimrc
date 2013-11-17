@@ -106,6 +106,10 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'powerlineish'
 
+"Having the full branchname here all the time was annoying me
+"Have something else useful here?
+let g:airline_section_b = ''
+
 "highlight lines past 80 columns in length
 "
 hi OverLength ctermfg=096
@@ -119,10 +123,6 @@ map <C-n> :NERDTreeToggle<CR>
 
 "so jumping around in snake-case-land isn't so annoying
 "set iskeyword-=_
-
-" Prevent Vim from clobbering the scrollback buffer.
-" set t_ti= t_te=
-" NOTE: looks too weird when I close/background
 
 set title
 
