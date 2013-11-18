@@ -23,6 +23,9 @@ Bundle 'mileszs/ack.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
+Bundle 'lunaru/vim-less'
+Bundle 'jsx/jsx.vim'
+Bundle 'mileszs/ack.vim'
 
 set t_Co=256 "need more colourz
 set number
@@ -75,11 +78,11 @@ nmap <silent> <c-l> :wincmd l<CR>
 nmap <silent> <s-j> <c-d>
 nmap <silent> <s-k> <c-u>
 
-"backup to ~/.tmp 
-set backup 
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp 
-set backupskip=/tmp/*,/private/tmp/* 
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp 
+"backup to ~/.tmp
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 
 "Highlight the current line with slighly grey bg
@@ -94,9 +97,6 @@ set wildignore+=*/tmp/*,*.pyc,*.so,*.swp,*.zip     " MacOSX/Linux
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|third_party)$'
 
-"git grep the current word under cursor
-nnoremap <silent> F :Ggrep <cword><CR>
-
 "Grep in a quickfix
 autocmd QuickFixCmdPost *grep* cwindow
 
@@ -110,10 +110,11 @@ let g:airline_theme = 'powerlineish'
 "Have something else useful here?
 let g:airline_section_b = ''
 
-"highlight lines past 80 columns in length
-"
-hi OverLength ctermfg=096
-match OverLength /\%>79v.\+/
+"highlight lines past 79 columns in length
+match ErrorMsg /\%>79v.\+/
+
+"highlight trailing whitespace
+match ErrorMsg /\s\+\%#\@<!$/
 
 "Ctrl-Y: Lint test for python
 autocmd FileType python nnoremap <silent> <c-y> :call Flake8()<CR>
@@ -130,5 +131,4 @@ set title
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 
-"Line search in Ctrl-P
-map <C-l> :CtrlPLine<CR>
+map <c-i> :CtrlPLine<CR>
