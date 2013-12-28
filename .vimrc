@@ -120,7 +120,8 @@ match ErrorMsg /\s\+\%#\@<!$/
 autocmd FileType python nnoremap <silent> <c-y> :call Flake8()<CR>
 
 "Nerd Tree
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeFind<CR>
+let NERDTreeQuitOnOpen = 1
 
 "so jumping around in snake-case-land isn't so annoying
 "set iskeyword-=_
