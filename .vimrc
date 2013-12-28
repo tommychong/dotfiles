@@ -133,3 +133,9 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 
 map <c-i> :CtrlPLine<CR>
+
+"ack
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+"Add pdbz
+abbr pdb! import pdb, sys; pdb.Pdb(stdin=sys.__stdin__, stdout=sys.__stdout__).set_trace()
