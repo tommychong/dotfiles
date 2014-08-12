@@ -17,7 +17,6 @@ Bundle 'bling/vim-airline'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'myusuf3/numbers.vim'
-Bundle 'sontek/rope-vim'
 Bundle 'nvie/vim-flake8'
 Bundle 'mileszs/ack.vim'
 Bundle 'altercation/vim-colors-solarized'
@@ -25,7 +24,6 @@ Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
 Bundle 'lunaru/vim-less'
 Bundle 'jsx/jsx.vim'
-Bundle 'mileszs/ack.vim'
 
 set t_Co=256 "need more colourz
 set number
