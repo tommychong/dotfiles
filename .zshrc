@@ -42,36 +42,7 @@ ZSH_THEME="agnoster-tom"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
-# Activate Python2.7 virtualenv
-source ~/.virtualenv/khan27/bin/activate
-
 source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
-export PATH=$PATH:/Users/Tommy/.virtualenv/khan27/bin:/Users/Tommy/khan/devtools/arcanist/khan-bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
-
-################################################################################
-# Khan Academy specific bashrc
-
-# Add Phabricator bins to PATH
-export PATH="$HOME/khan/devtools/arcanist/khan-bin:$PATH"
-
-# Figure out what directory we're *really* in (following symlinks).
-# We need this because *-completion.bash are siblings to this script.
-# http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
-SOURCE="${BASH_SOURCE[0]}"
-while [ -h "$SOURCE" ]; do   # follow symlinks
-  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
-  SOURCE="$(readlink "$SOURCE")"
-  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"    # resolve relative symlink
-done
-DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
-
-# Enable autocompletion for git and hg
-#source "$DIR/git-completion.bash"
-#source "$DIR/hg-completion.bash"
-
-alias launchdev="dev_appserver.py --datastore_path=../current.sqlite --blobstore_path=./datastore/blobs --require_indexes --host=0.0.0.0 ."
 
 alias ls='ls -GFh'
 
@@ -88,7 +59,6 @@ alias cls='clear && ls'
 
 alias ez='vim ~/.zshrc'
 alias sz='source ~/.zshrc'
-
 
 #Use badass 256 color xterm
 export TERM=xterm-256color
