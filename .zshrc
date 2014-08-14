@@ -62,3 +62,6 @@ alias sz='source ~/.zshrc'
 
 #Use badass 256 color xterm
 export TERM=xterm-256color
+
+#initialize keychain
+kinit --keychain
