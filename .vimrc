@@ -24,6 +24,7 @@ Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
 Bundle 'lunaru/vim-less'
 Bundle 'jsx/jsx.vim'
+Bundle 'derekwyatt/vim-scala'
 
 set t_Co=256 "need more colourz
 set number
@@ -137,3 +138,6 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 "Add pdbz
 abbr pdb! import pdb, sys; pdb.Pdb(stdin=sys.__stdin__, stdout=sys.__stdout__).set_trace()
+
+"twitter stuff
+au BufNewFile,BufRead BUILD set filetype=python
